@@ -1,2 +1,2 @@
-# ally-2020
+# Ally
 Frontend Challenge
