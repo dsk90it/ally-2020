@@ -131,12 +131,13 @@ header h1{
   display: inline-block;
   position: absolute;
   left: 0;
-  top: 12px;
+  top: 50%;
   width: 24px;
   height: 24px;
   text-align: center;
   background-color: #D8B8A6;
   border-radius: 100%;
+  transform: translateY(-50%);
 }
 .accordion .accordion-link:after{
   content: '+';
@@ -146,8 +147,10 @@ header h1{
   line-height: 1;
   position: absolute;
   left: 6px;
-  top: 12px;
+  top: 50%;
   transition: all 0.2s;
+  transform-origin: top;
+  transform: translateY(-50%);
 }
 .accordion ol{
   overflow: hidden;
@@ -164,7 +167,7 @@ header h1{
 .accordion li{
   float: left;
   width: 100%;
-  margin: 6px 0;
+  margin: 8px 0;
 }
 .accordion li:first-child{
   padding-top: 16px;
@@ -178,7 +181,7 @@ header h1{
   max-height: 100vh;
 }
 .accordion.open .accordion-link:after{
-  transform: rotate(45deg);
+  transform: rotate(45deg) translateY(-50%);
 }
 
 /* tablets */
