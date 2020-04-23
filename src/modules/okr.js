@@ -1,8 +1,8 @@
-import { result } from "../data"
+import okrData from "./requests"
 
 // Get OKR's
-export const getOkrs = () => {
-    const data = result.data
+export const getOkrs = async() => {
+    const data = await okrData()
     const parent = data.filter((item) => !item.parent_objective_id)
     const children = data.filter((item) => item.parent_objective_id)
     const matchSubitems = (id) => children.filter((item) => item.parent_objective_id === id)
@@ -11,6 +11,6 @@ export const getOkrs = () => {
         const getSubitems = matchSubitems(item.id)
         item.subitems = [...getSubitems]
     })
-
+    
     return parent
 }

@@ -5,8 +5,9 @@ import { getOkrs } from "./okr"
 // Generate Select DOM
 
 // Render OKR's
-const renderOkr = () => {
-    console.log(getOkrs())
+const renderOkr = async () => {
+    const data = await getOkrs()
+    console.log(data);
 }
 
 export { renderOkr }
