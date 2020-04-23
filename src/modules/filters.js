@@ -1,11 +1,11 @@
 const filters = {
-    category: ''
+    sortBy: ''
 }
 
 const getFilters = () => filters
 
 const setFilters = (selectValue) => {
-    filters.category = selectValue
+    filters.sortBy = selectValue
 }
 
 export { getFilters, setFilters }

@@ -167,6 +167,9 @@ header h1{
   width: 100%;
   margin: 8px 0;
 }
+.accordion li.no-items{
+  list-style: none;
+}
 .accordion li:first-child{
   padding-top: 16px;
 }

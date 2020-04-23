@@ -1,11 +1,13 @@
-import { renderOkr } from "./modules/views";
+import { renderOkr, generateOptions } from "./modules/views";
 import { setFilters } from "./modules/filters";
+
+generateOptions()
 
 renderOkr()
 
 document.querySelector('select').addEventListener('change', (e) => {
     setFilters({
-        category: e.target.value
+        sortBy: e.target.value
     })
     renderOkr()
 })
