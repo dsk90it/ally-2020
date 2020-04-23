@@ -1,15 +1,11 @@
-import { result } from "./data";
+import { renderOkr } from "./modules/views";
+import { setFilters } from "./modules/filters";
 
-let okrs = ['1', '2']
+renderOkr()
 
-const data = result.data
-const parent = data.filter((item) => !item.parent_objective_id)
-const children = data.filter((item) => item.parent_objective_id)
-
-parent.forEach((item) => {
-    item.subitems = [...okrs]
-    return item
+document.querySelector('select').addEventListener('change', (e) => {
+    setFilters({
+        category: e.target.value
+    })
+    renderOkr()
 })
-
-console.log(parent)
-console.log(children)

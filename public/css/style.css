@@ -85,6 +85,7 @@ header h1{
   vertical-align: top;
   transform: rotate(45deg);
   transform-origin: top;
+  pointer-events: none;
 }
 .custom-select select{
   -webkit-appearance: none;
