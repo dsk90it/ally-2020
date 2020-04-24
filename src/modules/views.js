@@ -34,27 +34,35 @@ const generateOptions = async () =>{
     uniqueArray.forEach(element => {
         const optionEl = document.createElement('option')
         optionEl.text = element
+        optionEl.value = element.toLowerCase()
         return selectEl.options.add(optionEl, selIndex++)
     })
 
     return selectEl
 }
 
+// Sort OKR's by category
+const sortOkrs = (data, {sortBy}) => {
+    const byCategory = data.filter(item => item.category.toLowerCase().includes(sortBy) )
+    return byCategory
+}
+
 // Render OKR's
 const renderOkr = async () => {
     const data = await getOkrs()
-    const { sortBy } = getFilters()
     const sectionEl = document.querySelector('section')
-    const filterOkrs = data.filter(item => item.category.toLowerCase().includes('customer success'))
+    const { sortBy } = getFilters()
+    const filterOkrs = sortOkrs(data, sortBy)
 
     sectionEl.innerHTML = ''
 
-    data.map(item => sectionEl.innerHTML += generateAccordion(item)).join('');
+    data.map(item => sectionEl.innerHTML += generateAccordion(item)).join('')
 
     // console.log(data)
+    console.log('Fitered')
     console.log(filterOkrs)
-    console.log('Sorting')
-    console.log(sortBy)
+    console.log('Set Filter')
+    console.log(sortBy);
 }
 
 export { renderOkr, generateOptions }
