@@ -29,6 +29,9 @@ header, section{
 .text-right{
   text-align: right;
 }
+.text-center{
+  text-align: center;
+}
 a{
   text-decoration: none;
   transition: all 0.2s;

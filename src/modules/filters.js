@@ -1,9 +1,11 @@
 const filters = {
-    sortBy: ''
+    sortBy: 'design'
 }
 
 const getFilters = () => filters
 
-const setFilters = (selectValue) => filters.sortBy = selectValue
+const setFilters = (selectValue) => {
+    filters.sortBy = selectValue
+}
 
 export { getFilters, setFilters }

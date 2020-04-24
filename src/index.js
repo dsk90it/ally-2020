@@ -1,13 +1,17 @@
-import { renderOkr, generateOptions } from "./modules/views";
-import { setFilters } from "./modules/filters";
+import getOkrs from './modules/requests'
+import { renderOkr, renderSelectOptions } from './modules/views'
+import { setFilters } from './modules/filters'
 
-generateOptions()
+getOkrs().then((result) => {
+    renderSelectOptions(result)
+    
+    renderOkr(result)
 
-renderOkr()
-
-document.querySelector('select').addEventListener('change', (e) => {
-    setFilters({
-        sortBy: e.target.value
+    document.querySelector('select').addEventListener('change', (e) => {
+        setFilters(e.target.value)
+        renderOkr(result)
+        console.log(e.target)
     })
-    renderOkr()
+}).catch((err) => {
+    console.log(err)
 })
