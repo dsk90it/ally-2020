@@ -182,7 +182,7 @@ header h1{
 
 /* open state */
 .accordion.open ol{
-  max-height: 100vh;
+  max-height: 216px;
 }
 .accordion.open .accordion-link:after{
   transform: rotate(45deg);
