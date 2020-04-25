@@ -1,5 +1,5 @@
 const getOkrs = async () => {
-    const response = await fetch('https://okrcentral.github.io/sample-okrs/db.json')
+    const response = await fetch('//okrcentral.github.io/sample-okrs/db.json')
     
     if(response.status === 200){
         const result = await response.json()
