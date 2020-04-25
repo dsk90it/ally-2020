@@ -1,8 +1,10 @@
 import { getFilters } from "./filters"
+import initAccordion from "./accordion"
+
+const selectEl = document.querySelector('select')
 
 // Generate Select DOM
 const renderSelectOptions = (data) =>{
-    const selectEl = document.querySelector('select')
     let categories = []
     let selIndex = 0
 
@@ -44,18 +46,14 @@ const sortOkrs = (data, sortBy) => {
     const allCategory = data.filter(item => item.category.toLowerCase() !== '')
     const byCategory = data.filter(item => item.category.toLowerCase() === sortBy)
 
-    if(byCategory.length == 0){
-        return allCategory
-    } else{
-        return byCategory
-    }
+    return (byCategory.length == 0) ? allCategory : byCategory
 }
 
 // Render Okr's
 const renderOkr = (data) =>{
-    const sectionEl = document.querySelector('section')
     const { sortBy } = getFilters()
     const filterData = sortOkrs(data, sortBy)
+    const sectionEl = document.querySelector('section')
     
     sectionEl.innerHTML = ''
 
@@ -68,34 +66,16 @@ const renderOkr = (data) =>{
     // initalize accordion
     initAccordion()
 
-    console.log(filterData)
-}
+    // Handle Selected State on render
+    let options = []
+    const selectEloptions = selectEl.options
+    options = [...selectEloptions]
+    const findOption = options.find((item) => item.value === sortBy)
 
-const initAccordion = () => {
-    const accordion = document.querySelectorAll('.accordion')
-    const accordionLink = document.querySelectorAll('.accordion-link')
+    options.forEach(item => item.removeAttribute('selected'))
 
-    accordionLink.forEach((item) => {
-        item.addEventListener('click', (e) => {
-            const parent = e.target.parentElement
-            
-            // If doesn't have `open` class apply to parent
-            const setClass = !parent.classList.contains('open')
-            
-            /**
-             * Open only one accordion at a time
-             * To achieve this we need to `reset/remove open class` each and every click
-            **/
-            resetClass(accordion, 'open')
-
-            if(setClass){
-                parent.classList.toggle('open')
-            }
-        })
-    })
-
-    const resetClass = (ele, className) => {
-        ele.forEach(item => item.classList.remove(className))
+    if(!findOption.hasAttribute('selected')){
+        findOption.setAttribute('selected', 'selected')
     }
 }
 

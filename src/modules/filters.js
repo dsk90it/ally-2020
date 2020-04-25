@@ -1,5 +1,5 @@
 const filters = {
-    sortBy: 'customer success'
+    sortBy: 'company' // default state is company
 }
 
 const getFilters = () => filters
