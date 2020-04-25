@@ -41,8 +41,14 @@ const generateSubitems = (subitem) => {
 
 // Filter OKR's by Category
 const sortOkrs = (data, sortBy) => {
+    const allCategory = data.filter(item => item.category.toLowerCase() !== '')
     const byCategory = data.filter(item => item.category.toLowerCase() === sortBy)
-    return byCategory
+    
+    if(byCategory.length == 0){
+        return allCategory
+    } else{
+        return byCategory
+    }
 }
 
 // Render Okr's

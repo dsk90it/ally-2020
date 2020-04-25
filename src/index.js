@@ -1,16 +1,24 @@
 import getOkrs from './modules/requests'
 import { renderOkr, renderSelectOptions } from './modules/views'
-import { setFilters } from './modules/filters'
+import { setFilters, getFilters } from './modules/filters'
 
 getOkrs().then((result) => {
     renderSelectOptions(result)
     
     renderOkr(result)
 
+    getFilters();
+
     document.querySelector('select').addEventListener('change', (e) => {
-        setFilters(e.target.value)
+        const selectValue = e.target.value
+        // const option = e.target.options
+        // const index = e.target.selectedIndex
+        // options[index].setAttribute('selected', 'selected')
+
+        setFilters(selectValue)
         renderOkr(result)
-        console.log(e.target)
+
+        // console.log(getFilters());
     })
 }).catch((err) => {
     console.log(err)
