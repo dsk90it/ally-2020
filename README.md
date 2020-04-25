@@ -3,6 +3,7 @@ Create a Single Page Application to display OKRs (Objectives & Key Results) with
 
 ## 🚀 Demo
 
+
 ## ❗Requirements [Completed : 6/6]
 - ✅ You have to make an AJAX request to fetch OKRs.
 - ✅ Note: (Refer fetched json)
@@ -18,3 +19,10 @@ Create a Single Page Application to display OKRs (Objectives & Key Results) with
 - CSS
 - Vanilla JS
 - Webpack
+
+## ⚙ Installation
+1. Fork this repository to your GitHub account
+2. Clone your fork to your development machine
+3. Install the package dependencies by running `npm install` (or yarn if you prefer)
+4. Start the application server by running `npm run dev-server`
+5. For production build run `npm run build`
