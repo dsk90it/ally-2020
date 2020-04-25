@@ -1,6 +1,5 @@
 const filters = {
-    sortBy: 'customer success',
-    // selected: true
+    sortBy: 'customer success'
 }
 
 const getFilters = () => filters
