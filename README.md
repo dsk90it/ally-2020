@@ -25,5 +25,5 @@ https://ally2020.netlify.app/
 2. Clone your fork to your development machine
 3. Install the package dependencies by running `npm install` (or yarn if you prefer)
 4. Start the application server by running `npm run dev-server`
-5. Open your browser to [http://localhost:8080](http://localhost:8080){:target="_blank"}
+5. Open your browser to [http://localhost:8080](http://localhost:8080?target="_blank")
 6. For production build run `npm run build`
