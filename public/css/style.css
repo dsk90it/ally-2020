@@ -2,69 +2,73 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap");
 
 /* defaults & resets */
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-header, section{
+header,
+section {
   display: block;
 }
-.clearfix:before, .clearfix:after {
+.clearfix:before,
+.clearfix:after {
   content: "";
   display: table;
 }
 .clearfix:after {
   clear: both;
 }
-.fw{
+.fw {
   width: 100%;
 }
-.fl{
-   float: left;
+.fl {
+  float: left;
 }
-.fr{
+.fr {
   float: right;
 }
-.text-right{
+.text-right {
   text-align: right;
 }
-.text-center{
+.text-center {
   text-align: center;
 }
-a{
+a {
   text-decoration: none;
   transition: all 0.2s;
 }
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Source Sans Pro', sans-serif;
-  background-color: #FCF6F2;
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: #fcf6f2;
   color: #000000;
   font-weight: 400;
   font-size: 17px;
 }
-h1{
+h1 {
   font-size: 1.75em;
 }
 
 /* container */
-.container{
+.container {
   margin: 32px auto;
   max-width: 640px;
   padding: 0 16px;
 }
 
 /* Header */
-header{
+header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
   margin-bottom: 40px;
 }
-header h1{
+header h1 {
   margin: 0;
 }
 
@@ -74,8 +78,8 @@ header h1{
   position: relative;
   vertical-align: top;
 }
-.custom-select:after{
-  content: '';
+.custom-select:after {
+  content: "";
   position: absolute;
   top: 15px;
   right: 10px;
@@ -90,17 +94,17 @@ header h1{
   transform-origin: top;
   pointer-events: none;
 }
-.custom-select select{
+.custom-select select {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   appearance: none;
-  cursor: pointer; 
+  cursor: pointer;
   padding: 8px 40px 8px 16px;
   background-color: #efeff0;
   border-color: #efeff0;
-  color: #3C1921;
-  font-family: 'Source Sans Pro', sans-serif;
+  color: #3c1921;
+  font-family: "Source Sans Pro", sans-serif;
   outline: 0 none;
   height: 40px;
   box-shadow: none;
@@ -112,7 +116,7 @@ header h1{
 }
 
 /* card */
-.card{
+.card {
   padding: 24px;
   background-color: #ffffff;
   box-shadow: 0 0 24px rgba(170, 39, 42, 0.28);
@@ -120,7 +124,7 @@ header h1{
 }
 
 /* accordion */
-.accordion .accordion-link{
+.accordion .accordion-link {
   display: block;
   width: 100%;
   cursor: pointer;
@@ -130,8 +134,8 @@ header h1{
   font-weight: 600;
   user-select: none;
 }
-.accordion .accordion-link:before{
-  content: '';
+.accordion .accordion-link:before {
+  content: "";
   display: inline-block;
   position: absolute;
   left: 0;
@@ -139,11 +143,11 @@ header h1{
   width: 24px;
   height: 24px;
   text-align: center;
-  background-color: #D8B8A6;
+  background-color: #d8b8a6;
   border-radius: 100%;
 }
-.accordion .accordion-link:after{
-  content: '+';
+.accordion .accordion-link:after {
+  content: "+";
   display: inline-block;
   color: #ffffff;
   font-size: 24px;
@@ -153,47 +157,45 @@ header h1{
   top: 12px;
   transition: all 0.2s;
 }
-.accordion ol{
-  overflow: hidden;
+.accordion ol {
+  display: none;
   margin: 0;
   padding: 0;
   border: 0;
   box-shadow: inset 0 -1px 0 0 #f7efe8;
   font-size: 15px;
-  max-height: 0;
-  transition: all 0.2s;
   list-style: decimal;
   list-style-position: inside;
 }
-.accordion li{
+.accordion li {
   float: left;
   width: 100%;
   margin: 8px 0;
 }
-.accordion li.no-items{
+.accordion li.no-items {
   list-style: none;
 }
-.accordion li:first-child{
+.accordion li:first-child {
   padding-top: 16px;
 }
-.accordion li:last-child{
+.accordion li:last-child {
   padding-bottom: 20px;
 }
 
 /* open state */
-.accordion.open ol{
-  max-height: 216px;
+.accordion.open ol {
+  display: block;
 }
-.accordion.open .accordion-link:after{
+.accordion.open .accordion-link:after {
   transform: rotate(45deg);
 }
 
 /* tablets */
-@media (min-width: 768px){
-  .card{
+@media (min-width: 768px) {
+  .card {
     padding: 40px 56px;
   }
-  .accordion ol{
+  .accordion ol {
     padding-left: 40px;
   }
 }
