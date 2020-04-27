@@ -132,7 +132,7 @@ header h1 {
 	padding: 12px 0 12px 40px;
 	border-bottom: 1px solid #f7efe8;
 	font-weight: 600;
-	user-select: none;
+	/* user-select: none; */
 }
 .accordion .accordion-link:before {
 	content: '';
