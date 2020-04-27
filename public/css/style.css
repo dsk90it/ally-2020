@@ -143,8 +143,7 @@ header h1 {
 	width: 24px;
 	height: 24px;
 	text-align: center;
-	/* background-color: #d8b8a6; */
-	background-color: red;
+	background-color: #d8b8a6;
 	border-radius: 100%;
 }
 .accordion .accordion-link:after {
