@@ -29,9 +29,10 @@ const renderSelectOptions = (data) => {
 
 // Generate Accordion DOM
 const generateAccordion = ({ title, subitems }) => {
+	const heading = title.split('"').pop('')
 	return `
     <div class="clearfix fw accordion">
-        <div class="accordion-link">${title}</div>
+        <div class="accordion-link">${heading}</div>
         <ol class="clearfix fw">${generateSubitems(subitems)}</ol>
     </div>
   `
